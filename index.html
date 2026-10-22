@@ -25,6 +25,11 @@
 <body>
 <!-- Înlocuiește https://script.google.com/macros/s/AKfycbwnnjpTpkVs1E_PdFX4PvUgdb0QXps-LIg5xQJNPLD-EMHvsPBe4FQ9L7yw9Z0XGbWcWg/exec cu linkul /exec al aplicației Apps Script -->
 <iframe id="app" src="https://script.google.com/macros/s/AKfycbwnnjpTpkVs1E_PdFX4PvUgdb0QXps-LIg5xQJNPLD-EMHvsPBe4FQ9L7yw9Z0XGbWcWg/exec" title="Jurnal de tură SportGuru Iași" allow="clipboard-write"></iframe>
+  <script>
+  // iPhone/iPad: Safari blochează aplicațiile Google în ramă, așa că deschidem aplicația direct
+  var ios=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+  if(ios){ location.replace(document.getElementById('app').src); }
+</script>
 <div class="fallback" id="fb" hidden>Jurnalul nu s-a încărcat. <a href="https://script.google.com/macros/s/AKfycbwnnjpTpkVs1E_PdFX4PvUgdb0QXps-LIg5xQJNPLD-EMHvsPBe4FQ9L7yw9Z0XGbWcWg/exec" target="_top">Deschide-l direct</a></div>
 <script>
   // dacă iframe-ul nu se încarcă în 12 secunde, arată linkul direct
